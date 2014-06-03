@@ -11,7 +11,6 @@ $user = new Users();
 $users = $db->get('users');
 
 $error = false;
- echo 'test';
 if (isset($_POST['login']) && !empty($_POST['login'])) {
 	if($login->loginAttempt($_POST['username'],$_POST['password']) == true) {	
 		echo '<meta http-equiv="refresh" content="0">';
