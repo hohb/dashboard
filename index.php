@@ -9,7 +9,7 @@ $login = new LoginDb();
 $menu = new Menu();
 $user = new Users();
 $users = $db->get('users');
-echo 'test';
+
 $error = false;
 if (isset($_POST['login']) && !empty($_POST['login'])) {
 	if($login->loginAttempt($_POST['username'],$_POST['password']) == true) {	
