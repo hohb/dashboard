@@ -1,7 +1,9 @@
 <?php
-session_start();
+//session_start();
 error_reporting(E_ALL);
 include_once('includes/include.php');
+$_SESSION['userid'] = '1';
+$_SESSION['userhash'] = 'rlykc4JxGoGu2';
 //unset($_SESSION['userid']);
 //unset($_SESSION['userhash']);
 $db = new Mysqlidb('localhost', 'root', '', 'dashboard');
@@ -36,5 +38,20 @@ if (!empty($_SESSION['userid']) && $login->checkLogin($_SESSION['userid'],$_SESS
    include('pages/login.php');
 }
 ?>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://localhost/git/dashboard/analytics/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://localhost/git/dashboard/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 </body>
 </html>
